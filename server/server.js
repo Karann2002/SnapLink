@@ -22,21 +22,16 @@ const connectDB = require("./config/db");
 dotenv.config();
 
 const app = express();
+
 const server = http.createServer(app);
-
-// Serve frontend (React build)
-const clientDistPath = path.join(__dirname, "../client/dist");
-
-// Serve static files from client
-app.use(express.static(clientDistPath));
 
 // Handle SPA (React Router) fallback
 app.get("/", (req, res) => {
-  res.sendFile(path.resolve(clientDistPath, "../client/dist/index.html"));
+  return res.send("home page")
 });
 
 app.use(cors({
-  origin: ["http://localhost:5173"], // frontend URLs
+  origin: ["http://localhost:5173","https://snap-link-frontend-pi.vercel.app"], // frontend URLs
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
@@ -56,7 +51,7 @@ app.get("/api", (req, res) => {
 
 // --- Socket.io setup
 const io = new Server(server, {
-  cors: { origin: ["http://localhost:5173"], methods: ["GET", "POST"] },
+  cors: { origin: ["http://localhost:5173","https://snap-link-frontend-pi.vercel.app"], methods: ["GET", "POST"] },
 });
 
 io.on("connection", (socket) => {
@@ -137,4 +132,7 @@ mongoose
   })
   .catch((err) => console.log(err));
 
+
   connectDB()
+
+
