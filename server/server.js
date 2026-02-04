@@ -17,6 +17,7 @@ const conversationsRoutes = require("./routes/conversationRoutes");
 // Models
 const Message = require("./models/messageSchema");
 const Conversation = require("./models/coversation");
+const connectDB = require("./config/db");
 
 dotenv.config();
 
@@ -135,3 +136,5 @@ mongoose
     );
   })
   .catch((err) => console.log(err));
+
+  connectDB()

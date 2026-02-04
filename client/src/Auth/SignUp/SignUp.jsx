@@ -32,8 +32,8 @@ const SignUp = () => {
   return (
     <div>
          <div className="flex items-center gap-2 mb-10 p-5">
-        <img className="h-10" src="logo/download.jpg" alt="Instagram Logo" />
-        <h1 className="font-bold text-4xl text-gray-800">Instagram</h1>
+        <img className="h-10" src="logo/download.jpg" alt="SnapLink Logo" />
+        <h1 className="font-bold text-4xl text-gray-800">SnapLink</h1>
       </div>
     
     <div className=" flex flex-col justify-center items-center ">
@@ -46,7 +46,7 @@ const SignUp = () => {
         <div className="w-full md:w-1/2 p-4 flex justify-center items-center">
           <img
             src="logo/landing-2x.png"
-            alt="Instagram Landing"
+            alt="SnapLink Landing"
             className="w-full h-auto object-cover max-h-[500px]"
           />
         </div>
@@ -54,7 +54,7 @@ const SignUp = () => {
         {/* Right: Login Form */}
         <div className="w-full md:w-1/2 p-8 flex flex-col justify-center">
           <h2 className="text-2xl font-semibold text-center mb-2 text-gray-700">
-            SignUp to Instagram
+            SignUp to SnapLink
           </h2>
 <p className="text-sm  text-center mb-6 text-gray-700">Sign up to see photos and videos from your friends.</p>
 

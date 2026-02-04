@@ -139,7 +139,7 @@ const StoryViewer = () => {
               }}
             >
               
-              <div className="h-16 w-16 rounded-full border-2 border-pink-500 overflow-hidden">
+              <div className="h-20 w-20 rounded-full border-2 border-pink-500 overflow-hidden">
                  
                 <img
                   src={firstStory.image}
@@ -147,7 +147,7 @@ const StoryViewer = () => {
                   className="h-full w-full object-cover"
                 />
               </div>
-              <span className="text-xs mt-1 w-20 truncate">{username}</span>
+              <span className="text-xs mt-1 w-20 items-center truncate">{username}</span>
             </div>
           );
         })}

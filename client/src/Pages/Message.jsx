@@ -314,7 +314,7 @@ const sendMessage = (quickMsg) => {
     };
 
   return (
-    <div className="flex h-screen">
+    <div className="relative flex -ml-50 h-screen">
       {/* Sidebar */}
       <div className="w-[390px] border-r border-gray-300">
         <h1 className=" pt-10 p-4 font-bold text-xl">{user?.username}</h1>

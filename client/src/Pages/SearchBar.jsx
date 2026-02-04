@@ -88,7 +88,7 @@ const SearchBar = () => {
                     <div>
                       <h2 className="font-bold mb-2">Users</h2>
                       {results.users.map((user, idx) => (
-                        <Link to={`/profile/${user.username}`} key={idx}>
+                        <Link to={`search/${user.username}`} key={idx}>
                           <div
                             key={idx}
                             className="flex items-center hover:bg-slate-100 p-2 gap-3 mb-3"

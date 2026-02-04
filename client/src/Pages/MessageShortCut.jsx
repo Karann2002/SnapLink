@@ -44,7 +44,7 @@ const MessageShortCut = () => {
   }, []);
 
   return (
-    <div className="hidden absolute bottom-7 right-30 z-50 md:flex items-center gap-3 p-3 bg-white rounded-full shadow-xl hover:bg-slate-100 transition-all w-[300px]">
+    <div className="hidden fixed bottom-7 right-30 z-40 md:flex items-center gap-3 p-3 bg-white rounded-full shadow-xl hover:bg-slate-100 transition-all w-[300px]">
       {/* Toggle Area */}
       <div className="relative" ref={moreRef}>
         <div

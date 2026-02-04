@@ -20,7 +20,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import FollowStats from "../followUnfollow/FollowStats";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import LikeButton from "../Post/LikeButton";
 import PopupModal from "../Popup/PopupModal";
 import { useUser } from "../../Context/UserContext";
@@ -29,7 +29,8 @@ import StoryViewer from "../Stories/story";
 const Profile = () => {
  
   const { user } = useUser();
-  // const user = JSON.parse(localStorage.getItem("user"));
+    
+    const { username = user.username } = useParams();
   const [loading, setLoading] = useState(true);
   const [postCount, setPostCount] = useState("0");
   const [activeTab, setActiveTab] = useState("feed");

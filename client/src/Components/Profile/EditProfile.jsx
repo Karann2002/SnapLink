@@ -116,7 +116,7 @@ export default function AccountSettings() {
             />
             <p className="py-2 text-xs text-gray-800">
               Editing your links is only available on mobile. Visit the
-              Instagram app and edit your profile to change the websites in your
+              SnapLink app and edit your profile to change the websites in your
               bio.
             </p>
           </div>

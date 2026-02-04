@@ -38,7 +38,7 @@ return (
       <Route index element={<Home />} />
       {/* <Route path='home' element={<Home/>}/> */}
       <Route path="dashboard" element={<DashBoard/>}/>
-      <Route path="profile" element={<Profile/>}/>
+      <Route path=":username" element={<Profile/>}/>
       <Route path="explore" element={<ExplorePage/>}/>
       <Route path="reels" element={<Reels/>}/>
       <Route path="create" element={<Create/>}/>
@@ -47,11 +47,11 @@ return (
       <Route path="create/post" element={<CreatePost/>}/>
 
       <Route path="more" element={<More/>}/>
-      <Route path="message" element={<Message/>}/>
+      <Route path="message" element={<DashBoard/>}/>
       <Route path="notification" element={<Notification/>}/>
       <Route path="meta" element={<AlsoFromMeta/>}/>
       <Route path="search" element={<Search/>}/>
-       <Route path="profile/:username" element={<UserProfile />} />
+       <Route path="search/:username" element={<UserProfile />} />
 <Route path='setting' element={<ProtectedRoute><SettingLayout/></ProtectedRoute>}>
       <Route index element={<Navigate to="/setting/edit" replace />} />
 

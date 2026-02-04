@@ -80,8 +80,10 @@ const ClientSideBar = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  
   // Auto-collapse when search or notify open
  useEffect(() => {
+  
   // collapsed only when none of the panels are open
   setIsCollapsed((showSearchPanel || showNotifyPanel || showMessagePanel));
 }, [showSearchPanel, showNotifyPanel, showMessagePanel]);
@@ -90,15 +92,15 @@ const ClientSideBar = () => {
     <>
       {/* Desktop Sidebar */}
       <aside
-        className={`hidden md:flex flex-col p-4 bg-white h-screen border-r border-gray-200 transition-all duration-300 ease-in-out
-          ${isCollapsed ? "w-20" : "w-72"}`}
+        className={`hidden md:flex fixed flex-col p-4 bg-white h-screen border-r border-gray-200 transition-all duration-300 ease-in-out z-20
+          ${isCollapsed ? "w-20" : "w-62"}`}
       >
         {/* Logo */}
         <div className="flex gap-2 m-2 pt-5 pb-5 items-center">
           <Instagram />
           {!isCollapsed && (
             <Link to="/">
-              <h1 className="text-2xl font-bold">Instagram</h1>
+              <h1 className="text-2xl font-bold">SnapLink</h1>
             </Link>
           )}
         </div>
@@ -110,6 +112,7 @@ const ClientSideBar = () => {
             className={`hover:bg-slate-100 rounded-sm ${
               location.pathname === "/" ? "bg-slate-100 font-bold" : ""
             }`}
+            
           >
             <Link to="/" className="flex gap-4 items-center p-3">
               <House />
@@ -118,16 +121,21 @@ const ClientSideBar = () => {
           </li>
 
           {/* Search */}
-          <div ref={searchPanelRef}>
+          <div ref={searchPanelRef}
+          >
+            
             <li
               className="hover:bg-slate-100 rounded-sm cursor-pointer"
-              onClick={() => setShowSearchPanel(true)}
+              onClick={() => {setShowSearchPanel(true)
+                isCollapsed(true)}
+              }
             >
               <div className="flex gap-4 items-center p-3">
                 <Search />
                 {!isCollapsed && <p>Search</p>}
               </div>
             </li>
+            
             {showSearchPanel && (
               <div className="fixed top-0 left-20 h-full w-[400px] bg-white rounded-r-2xl border-r border-gray-300 z-50">
                 <SearchBar />
@@ -158,21 +166,27 @@ const ClientSideBar = () => {
           </li>
 
           {/* Messages */}
-          <div ref={messagePanelRef}>
+          <div 
+          ref={messagePanelRef}
+          >
            <li
   className={`hover:bg-slate-100 rounded-sm ${
-    location.pathname === "/message" ? "bg-slate-100 font-bold" : ""
+    location.pathname === "/message" ? `bg-slate-100 font-bold $` : ""
   }`}
   onClick={() => {
     setShowMessagePanel(true);
-    setIsCollapsed(true); // collapse only for message
+    isCollapsed(true); 
   }}
 >
-  <Link to="/message" className="flex gap-4 items-center p-3">
+  <Link  className="flex gap-4 items-center p-3">
     <Send /> {!isCollapsed && <p>Message</p>}
   </Link>
 </li>
-
+{showMessagePanel && (
+              <div className="fixed top-0 left-70 h-full md:w-314 bg-white rounded-r-2xl border-r border-gray-300 ">
+                <Message/>
+              </div>
+            )}
             
           </div>
 
@@ -217,7 +231,7 @@ const ClientSideBar = () => {
 
           {/* Profile */}
           <li>
-            <Link to="/profile" className="flex gap-4 items-center p-3">
+            <Link to={`/${user.username}`} className="flex gap-4 items-center p-3">
               <img
                 src={user?.profilePicUrl}
                 alt="profile"
@@ -240,8 +254,8 @@ const ClientSideBar = () => {
             </li>
 
             {moreOpen && (
-              <div className="absolute left-0 mt-2 w-64 bg-white border rounded-lg shadow-lg z-50">
-                <ul>
+              <div className="absolute -top-87 left-2 mt-2 w-64 bg-white  rounded-lg shadow-xl z-50">
+                <ul className="">
                   <li className="hover:bg-slate-100 p-3">
                     <Link to="/setting" className="flex gap-3">
                       <Settings size={18} /> Settings

@@ -1,9 +1,9 @@
 import React from 'react'
 
-const CommentButton = () => {
+const ShareMessage = () => {
   return (
     <div></div>
   )
 }
 
-export default CommentButton
+export default ShareMessage

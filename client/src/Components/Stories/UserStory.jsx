@@ -111,7 +111,7 @@ const UserStory = () => {
                   </div>
                 )}
               </div>
-              <span className="text-xs  w-20 truncate">Your Story</span>
+              <span className="flex text-xs mt-1 w-20 truncate justify-center items-center">Your Story</span>
             </div>
           ) : (
             <div>
@@ -126,15 +126,15 @@ const UserStory = () => {
                       setActiveIndex(0);
                     }}
                   >
-                    <div className="flex h-16 w-16 rounded-full border-2 border-pink-500 overflow-hidden">
+                    <div className="flex h-20 w-20 rounded-full border-2 border-pink-500 overflow-hidden justify-center items-center">
                       <img
                         src={user?.profilePicUrl}
-                        alt={firstStory.title}
+                        alt="Your story"
                         className="h-full w-full object-cover"
                       />
                     </div>
-                    <span className="text-xs mt-1 w-20 truncate">
-                      {username}
+                    <span className="flex text-xs mt-1 w-20 truncate justify-center items-center">
+                      Your Story
                     </span>
                   </div>
                 );
@@ -169,7 +169,7 @@ const UserStory = () => {
                   className="h-10 w-10 object-cover rounded-full"
                 />
                 <p className="font-semibold text-sm sm:text-base">
-                  {currentStories[activeIndex].username}
+                  {user?.username}
                 </p>
               </div>
             </div>

@@ -24,6 +24,7 @@ import FollowButton from "../Components/followUnfollow/FollowButton";
 import { Link } from "react-router-dom";
 import StoryViewer from "../Components/Stories/story";
 import SwitchLogin from "../Auth/Login/SwitchLogin";
+import ShareButton from "../Components/Post/ShareButton";
 
 const Home = ({ profileUser }) => {
   const token = localStorage.getItem("token");
@@ -136,9 +137,9 @@ const Home = ({ profileUser }) => {
     fetchUsers();
   }, []);
   return (
-    <div className="scroll-smooth md:px-30 ">
+    <div className=" md:px-30 ">
       <div className="md:hidden flex justify-between px-4 py-4 items-center">
-        <h1 className=" text-2xl  items-center  font-bold">Instagram </h1>
+        <h1 className=" text-2xl  items-center  font-bold">SnapLink </h1>
         <div className="flex gap-5 items-center">
           <Heart />
 
@@ -156,7 +157,7 @@ const Home = ({ profileUser }) => {
             {/* FEED SECTION */}
             <div className="w-full flex flex-col items-center min-h-screen md:pr-20">
               {/* STORIES */}
-              <div className="w-full max-w-2xl overflow-x-auto px-2 flex gap-4 py-4 border-b border-gray-300">
+              <div className="w-full max-w-2xl overflow-x-auto px-2 flex gap-4 py-4  border-gray-300">
                 <StoryViewer />
               </div>
 
@@ -384,6 +385,7 @@ const Home = ({ profileUser }) => {
                         initialComments={post.comments}
                         currentUserId={user._id}
                       />
+                      <ShareButton/>
                       <div className="mt-1 text-sm">
                         <span className="font-semibold">
                           {post.author?.username}

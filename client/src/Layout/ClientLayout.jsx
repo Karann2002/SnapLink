@@ -27,7 +27,7 @@ const ClientLayout = () => {
   }
 
   return (
-    <div className="">
+    <div className="relative">
       <div className=''>
        {!hideShortCut && ( 
         
@@ -38,7 +38,7 @@ const ClientLayout = () => {
       {/* <AdminNavbar toggleSidebar={() => setSidebarOpen(!sidebarOpen)}/> */}
       <div className="flex flex-1 bg-white z-50 h-screen">
       <ClientSideBar  />
-      <main className='  w-full  overflow-y-auto'>
+      <main className='md:ml-40 md:pl-30  w-full '>
       <Outlet/>
       
       </main>

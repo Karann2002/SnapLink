@@ -40,7 +40,7 @@ const SwitchLogin = () => {
         <div className="flex flex-col md:flex-row bg-white  rounded-lg overflow-hidden w-full max-w-5xl">
           <div className="w-full  p-8 flex flex-col justify-center">
             <h2 className="text-2xl font-semibold text-center mb-6 text-gray-700">
-              Login to Instagram
+              Login to SnapLink
             </h2>
 
             <form className="space-y-4" onSubmit={handleSubmit}>

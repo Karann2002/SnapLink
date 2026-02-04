@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const Sidebar = () => {
   return (
     <aside
-      className={`bg-white   overflow-y-auto h-[98vh] w-110 border-gray-100 transition-all duration-300 ease-in-out
+      className={`bg-white  ml-30 overflow-y-auto h-[98vh] w-110 border-gray-100 transition-all duration-300 ease-in-out
         `}
     >
       
@@ -30,7 +30,7 @@ const Sidebar = () => {
 
       <ul className="space-y-2 px-7 text-sm">
 
-        <p className='text-xs font-semibold text-gray-600 px-2'>How to use Instagram</p>
+        <p className='text-xs font-semibold text-gray-600 px-2'>How to use SnapLink</p>
         <li className="hover:bg-slate-100 rounded-sm ">
           <Link
             className="flex font-normal gap-4 items-center p-2 pt-3 pb-3"
